@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="num1" placeholder="Enter A number one"><br>
+    <input type="text" id="num2" placeholder="Enter A number two"><br>
+
+    <button onclick="calculate()">Calculate</button>
+    <p id="result"></p>
+</body>
+
+<script>
+    function calculate() {
+        let num1 = parseInt(document.getElementById('num1').value);
+        let num2 = parseInt(document.getElementById('num2').value);
+
+        let sum = num1 + num2;
+        let difference = num1 - num2;
+        let product = num1 * num2;
+        let quotient = num1 / num2;
+        let remainder = num1 % num2;
+        let exponentiation = Math.pow(num1, num2);
+
+
+        
+        document.getElementById('result').innerHTML =
+        "Sum: " + sum + "<br>" +
+        "diff: " + difference + "<br>" +
+        "product: " + product + "<br>" +
+        "division: " + quotient + "<br>" +
+        "remainder: " + remainder  ;
+
+
+
+    }
+
+</script>
+</html>

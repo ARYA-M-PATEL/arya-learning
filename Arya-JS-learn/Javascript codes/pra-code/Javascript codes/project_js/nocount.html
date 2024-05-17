@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+                }
+        .card{
+            width: 600px;
+            height: 350px;
+            box-shadow: 10px 10px 15px rgb(192 , 183, 188), 10px 10px 15px rgb(192 , 183, 188);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(37, 37, 88);
+            color: wheat;
+            font-size: 30px;
+        }
+        .counterbtn{
+            padding: 10px;
+            background-color: green ;
+            color: white;
+            font-weight: 900;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2 class="name">javascript Projects</h2>
+        <h4 id="counter">0</h4>
+
+        <div class="container">
+            <button class="counterbtn prevbtn">lower</button>
+            <button class="counterbtn nextbtn">add</button>
+        </div>
+    </div>
+</body>
+<script>
+    (function() {
+        const buttons = document.querySelectorAll('.counterbtn')
+        let count = 0
+
+        buttons.forEach( function(button) {
+            button.addEventListener('click', function() {
+                if(button.classList.contains('prevbtn')) {
+                    count--
+                }
+                else if(button.classList.contains('nextbtn')) {
+                    count++
+                }
+
+                const counter = document.querySelector('#counter')
+                    counter.textContent = count
+
+                    if(count < 0){
+                        counter.style.color = 'red'
+                    }
+                    else if(count > 0){
+                        counter.style.color = 'green'
+                    }
+                    else{
+                        counter.srtyle.color = '#ffbb00'
+                    }
+            })   
+        })
+    }) ();
+</script>
+</html>

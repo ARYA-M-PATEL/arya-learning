@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Duplicate Division</title>
+
+<style>
+  #originalDiv{
+    border: 2px solid black;
+    padding: 20px;
+    background-color: aqua;
+    max-width: 600px;
+  }
+  .form{
+    display: flex;
+    flex-direction: column;
+  }
+  .form input{
+    padding: 10px;
+    font-size: 15px;
+  }
+  button{
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: blue;
+    margin: 15px;
+    color: white;
+    padding: 10px 20px;
+  }
+</style>
+</head>
+<body>
+
+<div id="originalDiv">
+    <h1>FORM</h1>
+    <form action="" class="form">
+      <label for="">Name:</label>
+      <input type="text">
+      <label for="">email:</label>
+      <input type="text">
+      <label for="">Number:</label>
+      <input type="text">
+    </form>
+<button onclick="addDuplicate()" >ADD</button>
+
+</div>
+
+
+<script>
+function addDuplicate() {
+  // Get the original div
+  var originalDiv = document.getElementById('originalDiv');
+  
+  // Clone the original div
+  var clonedDiv = originalDiv.cloneNode(true);
+  
+  // Insert the cloned div after the original one
+  originalDiv.parentNode.insertBefore(clonedDiv, originalDiv.nextSibling);
+}
+</script>
+
+</body>
+</html>

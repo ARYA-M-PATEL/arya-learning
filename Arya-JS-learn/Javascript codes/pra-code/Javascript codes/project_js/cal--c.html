@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>calculation</h1>
+    first no.: <input type="text" id="fno">
+    second no.: <input type="text" id="sno">
+    <button onclick="fun1()">calculate</button>
+    result: <h2 id="result"></h2>
+
+</body>
+<script>
+    function fun1(){
+        const fir_no = document.getElementById("fno").value;
+        const sec_no = document.getElementById("sno").value;
+
+        const total = parseInt(fir_no) + parseInt(sec_no);
+        document.getElementById("result").innerHTML = total;
+    }
+</script>
+</html>

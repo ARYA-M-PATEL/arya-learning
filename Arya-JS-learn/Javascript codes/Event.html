@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onresize="onResize()">
+    <div id="parent">
+        <p>
+        <div>
+            <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus error impedit id?</p>
+        </div>
+        </p>
+    </div>
+    <div id="btn">Delete</div>
+
+    <button id="clickbtn" onclick="chngbg(); text1(); text2()">Click button</button>
+    <!-- <button id="clickbtn" ondblclick="chngbg(); text1(); text2()">Click button</button> -->
+    <p id="para1"></p>
+    <p id="para2"></p>
+
+    <button id="clickbtn1">Click button1</button>
+    <p id="para11"></p>
+    <p id="para22"></p>
+
+    <button ondblclick="Dubleclick()">Double click</button>
+    <p id="dbl"></p>
+
+    <button id="dbltext">Double click here</button>
+    <p id="dbl1"></p>
+
+    <button id="dbltext2">Double click fro third</button>
+    <p id="dbl2"></p>
+
+    <h1>ONLOAD method</h1>
+    <div id="background"></div>
+
+    <h3>window resize</h3>
+    <p id="para111"></p>
+    <p> this count of resize <span id="paracount"></span></p>
+</body>
+
+</html>
+<script>
+    document.querySelector('#para').addEventListener('click', function () {
+        document.writeln("e.target.parentNode");
+        let Remov = e.target.parentNode;
+        Remov.remov()
+    })
+
+    function chngbg() {
+        document.body.style.background = "red"
+    }
+    function text1() {
+        document.getElementById('para1').innerHTML = "lorem"
+    }
+    function text2() {
+        document.getElementById('para2').innerHTML = "lorem2"
+    }
+
+    //    ************************************************************
+
+    document.getElementById("clickbtn1").addEventListener('click', chngbgcolor);
+    document.getElementById("clickbtn1").addEventListener('click', text11);
+    document.getElementById("clickbtn1").addEventListener('click', text22);
+    function chngbgcolor() {
+        document.body.style.background = "ORANGE"
+    }
+    function text11() {
+        document.getElementById('para11').innerHTML = "Hellow"
+    }
+    function text22() {
+        document.getElementById('para22').innerHTML = "world"
+    }
+
+</script>
+
+<!-- +++++++++++++++++++++++++Doubel Click Event+++++++++++++++++++++++++ -->
+
+<script>
+    // first method 
+    function Dubleclick() {
+        document.getElementById('dbl').innerHTML = "This is para";
+    }
+
+    // second method 
+    document.getElementById('dbltext').ondblclick = function () {
+        document.getElementById('dbl1').innerHTML = " this is second text";
+    }
+
+    // third method 
+    function Doubleclick2() {
+        document.getElementById('dbl1').innerHTML = " this is third text";
+    }
+    document.getElementById('dbltext2').addEventListener("dblclick", Doubleclick2);
+
+</script>
+
+<!-- +++++++++++++++++++++++++onload() Event+++++++++++++++++++++++++ -->
+
+<script>
+    window.onload = function () {
+        const x = document.getElementById('background');
+        x.style.background = "#242449";
+        x.style.height = "200px";
+        x.style.width = "200px";
+    }
+</script>
+
+<!-- +++++++++++++++++++++++++onload() Event+++++++++++++++++++++++++ -->
+<script>
+    var paracount = 0;
+    function onResize() {
+        document.getElementById('para111').innerHTML = "window size: " + " height: " + window.outerHeight + ",  width: " + window.outerWidth;
+
+        paracount = paracount + 1;
+        document.getElementById("paracount").innerHTML = paracount;
+    }
+</script>

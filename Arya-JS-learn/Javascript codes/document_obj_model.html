@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1">
+        Enter Your Name: <input type="text" name="name">
+        <br><br>
+        <input type="button" value="Click Me!" onclick="showname()">
+    </form>
+
+    Enter Your number: <input type="text" id="phonenumber">
+        <br><br>
+        <input type="button" value="My number!" onclick="phonenumber()">
+        <br><br>  
+    <div class="abc">
+        This is Class
+    </div>
+    <p>This is a paragraph</p>
+    <p>This is a paragraph</p>
+    <p>This is a paragraph</p>
+    <p>This is a paragraph</p>
+    <p>This is a paragraph</p>
+    <input type="button" value="no. of tag!" onclick="numberoftag()">
+
+
+    <script>
+        function showname(){
+            const name = document.form1.name.value;
+            alert('welcome : ' + name)
+            document.writeln("Welcome : " + name)
+        }
+       
+        function phonenumber(){
+            const PhoneNumber = document.getElementById("phonenumber").value;
+            alert("number is : " + PhoneNumber)
+            // document.writeln("number is : " + name)
+        }
+
+        const x = document.getElementsByClassName('abc');
+        // alert("Using Calss")
+        alert(a[0].innerText);
+
+        function numberoftag(){
+            const tag = document.getElementsByTagName("input");
+            alert("number of input tags : " + tag.length)
+            const tag1 = document.getElementsByTagName("P");
+            alert("number of paragraph tags : " + tag1.length);
+            const tag2 = document.getElementsByTagName("div");
+            alert("number of div tags : " + tag2.length)
+        }
+
+    </script>
+
+</body>
+</html>

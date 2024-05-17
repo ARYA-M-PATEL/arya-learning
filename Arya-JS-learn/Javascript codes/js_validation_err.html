@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="myForm">
+        <input type="text" id="inputField">
+        <button type="submit" id="submitButton">Submit</button>
+    </form>
+    <div id="error" class="error-message" style="display: none;">Please enter a valid value.</div>
+
+    <script>
+        const form = document.getElementById('myForm');
+        const inputField = document.getElementById('inputField');
+        const submitButton = document.getElementById('submitButton');
+        const errorMessage = document.getElementById('error');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+            if (inputField.value.trim() === '') {
+                errorMessage.style.display = 'block';
+            } else {
+                // Proceed with form submission
+                // You can also reset the form or do any other actions here
+                errorMessage.style.display = 'none';
+                form.submit();
+            }
+        });
+
+        inputField.addEventListener('click', function () {
+            errorMessage.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>

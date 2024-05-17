@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .quiz-section{
+            display: flex;
+            justify-content: center;
+        }
+        .quiz{
+            background-color: aqua;
+            width: 800px;
+            /* height: 800px;   */
+            padding: 20px;
+        }
+        .quiz h2{
+            font-size: 50px;
+        }
+        .quiz ul{
+            font-size: 30px;
+            list-style: none;
+        }
+        .quiz ul li{
+            border: 1px solid gray;
+            border-radius: 30px;
+            margin: 30px;
+            width: 300px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+
+        }
+        .quiz ul li .ans{
+            height: 25px;
+            width: 25px;
+            margin-right: 20px;
+        }
+        .btn #submit{
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body style="background-color: #212121;">
+    <div class="quiz-section">
+        <div class="quiz">
+            <h2 class="question" id="question">quiz section 1</h2>
+            <hr>
+            <ul>
+                <li>
+                    <input type="radio" name="ans" class="ans" id="a">
+                    <label for="a" id="abc1">questions</label>
+                </li>
+                <li>
+                    <input type="radio" name="ans" class="ans" id="a">
+                    <label for="a" id="abc2">questions</label>
+                </li>
+                <li>
+                    <input type="radio" name="ans" class="ans" id="a">
+                    <label for="a" id="abc3">questions</label>
+                </li>
+                <li>
+                    <input type="radio" name="ans" class="ans" id="a">
+                    <label for="a" id="abc4">questions</label>
+                </li>
+                <li>
+                    <input type="radio" name="ans" class="ans" id="a">
+                    <label for="a" id="abc5">questions</label>
+                </li>
+            </ul>
+            <hr>
+            <div class="btn">
+                <button type="submit" id="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const anselement = document.querySelectorAll(".ans")
+    const [questionElm, abc1, abc2, abc3, abc4] = document.querySelector("#question, #abc1, #abc2, #abc3, #abc4");
+    const submitBtn = document.querySelector("#submit");
+
+    const currentQuiz = 0;
+    const score = 0;
+
+    const loadQuiz = () => {
+        const { question, options } = quizData[currentQuiz];
+        console.log(question);
+
+        questionElm.innerText = question;
+        options.forEach((curOption, index) =>  window[`abc${currentQuiz}`].innerText = curOption);
+    };
+
+    loadQuiz();
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Images Dynamically</title>
+</head>
+<body>
+  <div id="imageContainer">
+    <!-- Existing images will be placed here -->
+  </div>
+  <button id="addImagesBtn">Add Images</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+  const addButton = document.getElementById('addImagesBtn');
+  const imageContainer = document.getElementById('imageContainer');
+
+  addButton.addEventListener('click', function() {
+    // Create img elements
+    const img1 = document.createElement('img');
+    img1.src = 'Javascript codes/img/product1.png'; // Set the source path of your image
+    img1.alt = 'Image 1'; // Set the alternative text for accessibility
+
+    const img2 = document.createElement('img');
+    img2.src = 'Javascript codes/img/product3.png'; // Set the source path of your image
+    img2.alt = 'Image 2'; // Set the alternative text for accessibility
+
+    // Append img elements to container
+    imageContainer.appendChild(img1);
+    imageContainer.appendChild(img2);
+  });
+});
+
+</script>
+
+

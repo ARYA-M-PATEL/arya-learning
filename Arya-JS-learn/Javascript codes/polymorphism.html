@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    class AA{
+        display(){
+            document.writeln("AryaKumar Patel" +"<br>")
+        }
+    }
+    class BB{
+        
+    }
+
+    const ABC = new AA()
+    ABC.display();
+
+// **********************************************//
+    class A{
+        display(){
+            document.writeln("Arya Patel")
+        }
+    }
+    class B{
+        display(){
+            document.writeln("Patel Arya")
+        }
+    }
+
+    const AB = [new A(), new B()]
+
+    AB.forEach(function(message) {
+        message.display();
+        document.writeln("<br>")
+    });
+
+// *********************polymorphism with prototype*************************//
+        function AA1(){
+            // document.writeln("Class AA1");
+        }
+        AA1.prototype.display = function(){
+            return "A class display method is called";
+        }
+
+        function BB1(){
+            document.writeln("Class BB1");
+        }
+        BB1.prototype.display = function(){
+            return "B class display method is called";
+        }
+    
+        BB1.prototype = Object.create(AA1.prototype);
+
+        const AABB1 = [new AA1(), new BB1()];
+    
+
+    AABB1.forEach(function(message) {
+        document.writeln(message.display() + "<br>")
+    });
+
+
+</script>    
+</body>
+
+</html>

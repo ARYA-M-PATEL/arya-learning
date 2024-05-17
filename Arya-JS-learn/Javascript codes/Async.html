@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1">Arya Patel</h1>
+    <h2 id="h2">Arya Patel</h2>
+    <button id="stop">Stop</button>
+</body>
+</html>
+<script>
+    setTimeout(function(){
+        document.writeln("This is a Async Example" + "<br>")
+    },2000)
+    const Async = function(){
+        document.writeln("This is a Async Example2")
+    }
+
+    setTimeout(Async, 4000);
+
+    const chantext = function(){
+        document.querySelector("h1").innerHTML = "Patel Arya";
+    }
+
+    setTimeout(chantext, 2000);
+
+    const chantext1 = function(){
+        document.querySelector("h2").innerHTML = "Aryakumar";
+    }
+
+    const changMe = setTimeout(chantext1, 1500);
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changMe);
+    })
+</script>

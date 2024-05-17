@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>button clicked</button>
+    <button id="red">button red</button>
+    <button id="green">button green</button>
+    <button id="yellow">button green</button>
+    <button id="gray">button green</button>
+    <button id="blue">button green</button>
+</body>
+
+<script>
+    class React {
+        constructor(){
+            this.library = "React"
+            this.server = "https://www.freecodecamp.org/news/javascript-projects-for-beginners/#how-to-create-a-color-flipper"
+
+            // requerment
+            document
+            .querySelector('button')
+            .addEventListener('click', this.handleClick)
+        }
+        handleClick(){
+            console.log("button clicked");
+            console.log(this.server);
+        }
+    }
+    function abc() {
+        let username = "Arya" 
+
+    }
+    console.log(username);
+
+    function clickHandler(color){
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+    document.getElementById('red').onclick = clickHandler("red")
+    document.getElementById('green').onclick = clickHandler("green")
+    document.getElementById('yellow').onclick = clickHandler("yellow")
+    document.getElementById('gray').onclick = clickHandler("gray")
+    document.getElementById('blue').onclick = clickHandler("blue")
+
+    const app = new React() 
+</script>
+</html>

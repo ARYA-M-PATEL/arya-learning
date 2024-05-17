@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="myform">
+        First Name : <input type="text" id="fname"> <br>
+        <div id="errfname" class="error-message" style="display: none;">Please enter first name</div><br><br>
+
+        Last Name : <input type="text" id="lname"> <br>
+        <div id="errlname" class="error-message" style="display: none;">Please enter first name</div><br><br>
+
+        Phone Number : <input type="text" id="phno"> <br>
+        <div id="errphno" class="error-message" style="display: none;">Please enter first name</div><br><br>
+
+        <button type="submit" id="Submit">SUBMIT</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('myform');
+        const finputField = document.getElementById('fname');
+        const linputField = document.getElementById('lname');
+        const submitButton = document.getElementById('Submit');
+        const phinputField = document.getElementById('phno');
+        const errorMessage1 = document.getElementById('errfname');
+        const errorMessage2 = document.getElementById('errlname');
+        const errorMessage3 = document.getElementById('errphno');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            if (finputField.value.trim() === '') {
+                errorMessage1.style.display = 'block';
+            } else {
+                errorMessage1.style.display = 'none';
+                form.submit();
+                return false;
+            }
+
+            if (finputField.value.trim() === '') {
+                errorMessage2.style.display = 'block';
+            } else {
+                errorMessage2.style.display = 'none';
+                form.submit();
+            }
+
+            if (phinputField.value.trim() === '') {
+                errorMessage3.style.display = 'block';
+            } else {
+                errorMessage3.style.display = 'none';
+                if (phinputField.value.trim() === '') {
+                    return false;
+                }
+                form.submit();
+            }
+
+        });
+
+        finputField.addEventListener('click', function () {
+            errorMessage1.style.display = 'none';
+        });
+        linputField.addEventListener('click', function () {
+            errorMessage2.style.display = 'none';
+        });
+        phinputField.addEventListener('click', function () {
+            errorMessage3.style.display = 'none';
+        });
+    </script>
+
+</body>
+
+</html>
+
+<style>
+    #fnameerror,
+    #lnameerror,
+    #emailerror {
+        color: red;
+    }
+</style>

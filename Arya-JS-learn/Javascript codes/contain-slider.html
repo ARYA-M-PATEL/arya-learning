@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+#slider{
+  margin:0 auto;  width:80%; overflow:hidden;
+}
+.slides{
+  overflow:hidden; animation-name:fade; animation-duration:1s; display:none; 
+}
+    </style>
+</head>
+<body>
+  <div id="slider">   
+    <div class="slides">  
+      <p>loremjshbfkjgnhbskjdfhbgsjkdfbgjkhdfb</p>
+  </div>
+  <div class="slides">  
+    <p>kjgnhbskjdfhbgsjkdfbgjkhdfb</p>
+    <p>loremjshbfkjgnhbskjdfhbgsjkdfbgjkhdfb</p>
+    <p>loremjshbfkjgnhbskjdfhbgsjkdfbgjkhdfb</p>
+    <p>loremjshbfkjgnhbskjdfhbgsjkdfbgjkhdfb</p>
+    <p>loremjshbfkjgnhbskjdfhbgsjkdfbgjkhdfb</p>
+    <p>loremjshbfkjgnhbskjdfhbgsjkdfbgjkhdfb</p>
+    <p>loremjshbfkjgnhbskjdfhbgsjkdfbgjkhdfb</p>
+    <p>loremjshbfkjgnhbskjdfhbgsjkdfbgjkhdfb</p>
+  </div> 
+    
+     <div class="slides">  
+    <p>
+      gsjkdfbgjkhdfb</p>
+      <p>loremjshbfkjgnhbskjdfhbgsjkdfbgjkhdfb</p>
+      <p>loremjshbfkjgnhbskjdfhbgsjkdfbgjkhdfb</p>
+      <p>loremjshbfkjgnhbskjdfhbgsjkdfbgjkhdfb</p>
+      
+  </div> 
+    
+  <div class="slides">  
+    <p>loremjshbfkjgnhbskjdfhbgsjkdfbgjkhdfb</p>
+    <p>loremjshbfkjgnhbskjdfhbgsjkdfbgjkhdfb</p>
+    <p>loremjshbfkjgnhbskjdfhbgsjkdfbgjkhdfb</p>
+    <p>loremjshbfkjgnhbskjdfhbgsjkdfbgjkhdfb</p>
+    <p>loremjshbfkjgnhbskjdfhbgsjkdfbgjkhdfb</p>
+    <p>loremjshbfkjgnhbskjdfhbgsjkdfbgjkhdfb</p>
+    <p>loremjshbfkjgnhbskjdfhbgsjkdfbgjkhdfb</p>
+    <p>loremjshbfkjgnhbskjdfhbgsjkdfbgjkhdfb</p>
+  </div>  
+  
+</body>
+<script>
+var index = 0;
+var slides = document.querySelectorAll(".slides");
+function changeSlide(){
+  if(index<0){
+    index = slides.length-1;
+  }
+  if(index>slides.length-1){
+    index = 0;
+  }
+  for(let i=0;i<slides.length;i++){
+    slides[i].style.display = "none";
+  }
+  slides[index].style.display= "block";
+  index++;
+  setTimeout(changeSlide,2000);
+}
+changeSlide();
+</script>
+</html>

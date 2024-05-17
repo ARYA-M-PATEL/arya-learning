@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=-, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'gilroy';
+        }
+
+        html, body{
+            height: 100%;
+            width: 100%;
+
+        }
+
+        #center{
+            width: 400px;
+            height: 200px;
+            border: 2px solid red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="center"></div>
+</body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    var rect = document.querySelector("#center");
+
+    rect.addEventListener("mousemove", function(details){
+        var rectanglelocation = rect.getBoundingClientRect();
+
+    var insiderectval = details.clientX - rectanglelocation.left;
+
+    if(insiderectval < rectanglelocation.width/2){
+        var redcolor = gsap.utils.mapRange(0, rectanglelocation.width/2, 255, 0, insiderectval);
+        gsap.to(rect, {
+            backgroundColor: `rgb(${redcolor}, 0 , 0)`, 
+            ease: Power4,
+        });
+    }
+    else{
+        var bluecolor = gsap.utils.mapRange(rectanglelocation.width/2, rectanglelocation.width, 0, 255, insiderectval);
+        gsap.to(rect, {
+            backgroundColor: `rgb( 0 , 0, ${bluecolor})`, 
+            ease: Power4,
+        });
+    }
+    });
+
+    
+    // if(insiderectval<rectanglelocation.width/2){
+    //     console.log("left")
+    // }
+    // else{
+    //     console.log("right");
+    // }
+    // });
+
+    rect.addEventListener("mouseleave", function(){
+        gsap.to(rect, {
+            backgroundColor: " transparent"
+        })
+    });
+</script>
+</html>

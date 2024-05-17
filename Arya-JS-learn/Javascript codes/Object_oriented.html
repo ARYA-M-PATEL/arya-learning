@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+
+<script>
+    class Employee{
+        constructor(id,name){
+            this.id = id;
+            this.name = name;
+        }
+        details(){
+            document.writeln(this.id + " " +this.name  )
+        }
+    } 
+</script>
+
+<script>
+    var emp = class{
+        constructor(id,name){
+            this.id = id;
+            this.name = name;
+        }
+        details(){
+            document.writeln(this.id + " " +this.name  )
+        }
+    }
+    var object1 = new emp(1,"abc");
+    object1.details();
+    document.writeln("<br>");
+    var object2 = new emp(2,"def");
+    object2.details();
+    document.writeln("<br>");
+    var object3 = new emp(3,"ghi");
+    object3.details();
+    document.writeln("<br>");
+
+
+   class Employees{
+    constructor(){
+        this.id = 100;
+        this.name = "ABCD";
+        this.name1 = "PQRS";
+    }
+   } 
+
+   const emp5 = new Employees();
+   
+   document.writeln(emp5.id + "<br>" )
+   document.writeln(emp5.id + " " + emp5.name + "<br>")
+   document.writeln(emp5.id + " " + emp5.name + " " + emp5.name1 + "<br>")
+</script>
+
+
+
+
+
+</html>

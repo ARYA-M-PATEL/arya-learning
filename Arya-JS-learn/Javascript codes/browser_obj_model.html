@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Browser Objects Model</h2>
+
+    <input type="button" value="Show" onclick="message()">
+    <input type="button" value="confirm1" onclick="confirm1()">
+    <input type="button" value="confirm2" onclick="confirm2()">
+    <input type="button" value="addinput" onclick="addinput()">
+    <input type="button" value="Open" onclick="openweb()">
+    <input type="button" value="Open in few second" onclick="Timing()">
+    <input type="button" value="Close" onclick="Closetag()">
+
+    <script>
+        function message(){
+            alert("Arya Patel")
+            //*****when we use 'alert' than show popup only "OK" button
+        }
+
+        function confirm1(){
+            const Confirm = confirm("Are Ready ?")
+            //when we use 'confirm' than show popup with "OK" and "CANCEL" button
+
+        }
+
+        function confirm2(){
+            var Confirm2= confirm("Are tack this?")
+
+            if(Confirm2 == true){
+                alert("The value is true")
+            }
+            else{
+                alert("The value is false")
+            }
+        }
+
+        function addinput(){
+            var Input= prompt("What is your Age?");
+        }
+
+        function openweb(){
+            open("https://www.learnvern.com/");
+        }
+       
+
+        function Timing(){
+            setTimeout(
+                function(){
+                    alert("I AM HERE");
+                }, 2000);
+        }
+
+        function Closetag(){
+            close();
+        }
+        document.writeln("<br>");
+        document.writeln("current page History : " +history.length);
+
+        document.writeln("<br>");
+        document.writeln("<br>");
+        document.writeln("Screen width : " + screen.width);
+        document.writeln("<br>");
+        document.writeln("Screen available width : " + screen.availWidth);
+        document.writeln("<br>");
+        document.writeln("Screen height : " + screen.height);
+        document.writeln("<br>");
+        document.writeln("Screen available height : " + screen.availHeight);
+        document.writeln("<br>");
+        document.writeln("Screen color depth : " + screen.colorDepth);
+        document.writeln("<br>");
+        document.writeln("Screen pixel depth : " + screen.pixelDepth);
+
+
+    </script>
+</body> 
+</html>

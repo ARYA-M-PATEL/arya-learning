@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onresize="onResize()">
+    
+    <p id="para111"></p>
+</body>
+</html>
+
+
+<!-- +++++++++++++++++++++++++onload() Event+++++++++++++++++++++++++ -->
+<script>
+    function onResize(){
+        document.getElementById('para111').innerHTML = "window size: " +" height: " + window.outerHeight +" width: " + window.outerWidth;
+    }
+</script>

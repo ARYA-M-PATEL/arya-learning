@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .abc{
+            width: 500px;
+            border:  2px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            background-color: rgb(104, 104, 237);
+
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        form input{
+            padding: 10px;
+            margin-bottom: 30px;
+            font-size: 20px;
+
+        }
+        form button{
+            background-color: blue;
+            color: wheat;
+            font-size: 20px;
+        }
+        .feedback{
+            /* display: none; */
+        }
+        .past-content{
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="abc">
+        <h4>A message you would like to pass</h4>
+        <form id="message-form">
+            <input type="text" id="message">
+            <input type="submit" id="submitbtn" class="">Submitsdss</input>
+            <h6 class="feedback">Please enter a value for pass</h6> 
+        </form>
+        <h4>Last message Diliver!</h4>
+        <h4 class="messagecontent">
+            Hellow World
+        </h4>
+    </div>
+</body>
+<script>
+    (function(){
+        const form = document.querySelector("#message-form")
+        form.addEventListener('submit', function(e){
+            e.preventDefault()
+            const message = document.querySelector('#message')
+            const feedBack = document.querySelector('.feedback')
+            const messageContent = document.querySelector('.messagecontent')
+            if(message.value === ''){
+                feedback.classList.add('show')
+            setTimeout(function(){
+                feedback.classList.remove('show')
+            }, 4000)
+            }
+            else {
+                messageContent.textContent = message.value
+                message.value = ''
+            }
+        })
+    })()
+</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1">Arya Patel</h1>
+    <button id="start">Start</button>
+    <button id="stop1">Stop</button>
+</body>
+</html>
+<script>
+
+    // part1+++++++++++++++++++
+    /* setInterval(function(){
+        document.writeln("Arya" )
+    },1000 )
+
+    const continuee = function(){
+        document.writeln("patel" + "<br>")
+    }
+    // setInterval(continuee,1000)
+
+    */
+   
+    // part2 +++++++++++++++++++
+
+    /* const continuee1 = function(){
+        document.writeln("patel" + "<br>")
+    }
+
+    const stostr = setInterval(continuee1 ,1000);
+
+    clearInterval(stostr)
+    */
+   
+
+    // part3 +++++++++++++++++++
+    let abc;
+    const running =  function(){
+        const continuee1 = function(){
+            console.log("patel")
+            console.log(" ")
+        }
+        abc = setInterval(continuee1 ,1000);
+    }
+
+    const stoping = function(){
+        clearInterval(abc)
+    }
+
+    document.querySelector('#start').addEventListener('click' ,running);
+    document.querySelector('#stop1').addEventListener('click' ,stoping );
+</script>
