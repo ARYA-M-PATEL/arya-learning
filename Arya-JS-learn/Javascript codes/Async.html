@@ -7,33 +7,33 @@
 </head>
 <body>
     <h1 id="h1">Arya Patel</h1>
-    <h2 id="h2">Arya Patel</h2>
-    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+    <button id="stop1">Stop</button>
 </body>
 </html>
 <script>
     setTimeout(function(){
-        document.writeln("This is a Async Example" + "<br>")
+        console.log("Arya Patel")
     },2000)
-    const Async = function(){
-        document.writeln("This is a Async Example2")
+
+    const arya = function(){
+        console.log("Arya")
     }
 
-    setTimeout(Async, 4000);
+    setTimeout(arya,3000)
 
-    const chantext = function(){
-        document.querySelector("h1").innerHTML = "Patel Arya";
+    const changetxt = function(){
+        document.querySelector('h1').innerHTML = "Patel Arya"
     }
 
-    setTimeout(chantext, 2000);
+    const timetochange = setTimeout(changetxt,2000)
 
-    const chantext1 = function(){
-        document.querySelector("h2").innerHTML = "Aryakumar";
-    }
+   document.querySelector("#stop1").addEventListener('click', function(){
+     clearTimeout(timetochange)
+     console.log("Stopped");
+   })
 
-    const changMe = setTimeout(chantext1, 1500);
-
-    document.querySelector('#stop').addEventListener('click', function(){
-        clearTimeout(changMe);
-    })
+//    setInterval(function(){
+//     console.log("Arya", Date.now())
+//    },1000)
 </script>
