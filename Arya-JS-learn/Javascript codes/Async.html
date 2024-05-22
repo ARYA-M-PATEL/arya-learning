@@ -12,28 +12,61 @@
 </body>
 </html>
 <script>
-    setTimeout(function(){
-        console.log("Arya Patel")
-    },2000)
+// *********** change Text ***********
 
-    const arya = function(){
-        console.log("Arya")
-    }
+//     setTimeout(function(){
+//         console.log("Arya Patel")
+//     },2000)
 
-    setTimeout(arya,3000)
+//     const arya = function(){
+//         console.log("Arya")
+//     }
 
-    const changetxt = function(){
-        document.querySelector('h1').innerHTML = "Patel Arya"
-    }
+//     setTimeout(arya,3000)
 
-    const timetochange = setTimeout(changetxt,2000)
+//     const changetxt = function(){
+//         document.querySelector('h1').innerHTML = "Patel Arya"
+//     }
 
-   document.querySelector("#stop1").addEventListener('click', function(){
-     clearTimeout(timetochange)
-     console.log("Stopped");
-   })
+//     const timetochange = setTimeout(changetxt,2000)
+
+//    document.querySelector("#stop1").addEventListener('click', function(){
+//      clearTimeout(timetochange)
+//      console.log("Stopped");
+//    })
 
 //    setInterval(function(){
 //     console.log("Arya", Date.now())
 //    },1000)
+
+
+// ***********random back-ground color***********
+
+const randomcolor = function(){
+    const hex = '0123456789ABCDEF';
+    let color = '#';
+    for(let i=0; i<6; i++){
+        color += hex[Math.floor(Math.random() * 16)] 
+    }
+    return color;
+};
+
+let changeMe;
+const startchangingcolor = function(){
+  if(!changeMe){
+    changeMe = setInterval(ChangeBgStart,1000)
+  }
+
+   function ChangeBgStart(){
+     document.body.style.backgroundColor = randomcolor()
+   }
+}
+const stopchangingcolor = function(){
+   clearInterval(changeMe);
+   changeMe = null;
+}
+
+document.querySelector('#start').addEventListener('click',startchangingcolor)
+document.querySelector('#stop1').addEventListener('click',stopchangingcolor)
+
 </script>
