@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <input type="text" name="t1" id="t1" placeholder="t1" onkeydown="subm()">
+  <input type="text" name="t3" id="t3" placeholder="t3" onkeydown="subm()"> <br><br>
+  <button type="submit" id="submit">submit</button> <br><br>
+  <input type="text" name="t2" id="t2" placeholder="t2">
+  <input type="text" name="t4" id="t4" placeholder="t4">
+  <br>
+  <hr><br>
+
+  <input type="text" name="n1" id="n1" placeholder="n1" onkeyup="sync()">
+  <input type="text" name="n3" id="n3" placeholder="n3" onkeyup="sync()"> <br> <br>
+  <button type="submit" id="submit" onclick="change()">Submit</button> <br> <br>
+  <input type="text" name="n2" id="n2" placeholder="n2" />
+  <input type="text" name="n4" id="n4" placeholder="n4" />
+
+  <script>
+    function subm() {
+      var t1 = document.getElementById('t1')
+      var t2 = document.getElementById('t2')
+      var t3 = document.getElementById('t3')
+      var t4 = document.getElementById('t4')
+
+      const sametxt = function () {
+        t2.value = t1.value
+        t4.value = t3.value
+      }
+
+      document.querySelector('#submit').addEventListener('click', sametxt)
+
+    }
+
+    // second
+
+
+    var n1 = document.getElementById('n1')
+    var n2 = document.getElementById('n2')
+    var n3 = document.getElementById('n3')
+    var n4 = document.getElementById('n4')
+
+    function change() {
+      n2.value = n1.value
+      n4.value = n3.value
+    }
+
+
+  </script>
+
+</body>
+
+</html>
+
+

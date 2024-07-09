@@ -46,3 +46,22 @@ const newNums = myNumbers.map((num) => {
   return num + 20;
 });
 console.log(newNums);
+
+// calculation
+var x = 10;
+var y = 20;
+var sum = x + y;
+var sub = x - y;
+var mod = x % y;
+var mul = x * y;
+console.log(sum);
+console.log(sub);
+console.log(mod);
+console.log(mul);
+
+var result = "hello" / 2;
+console.log(result);
+
+// calculation
+let num = 5;
+console.log(`5 * ${num} = ${5 * num}`);

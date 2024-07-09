@@ -1,30 +1,23 @@
 const myArr = [0, 1, 2, 3, 4];
 const myHerose = ["saktiman", "nagraj"];
-
-const Arr2 = new Array(1, 2, 3, 4);
 console.log(myArr[0]);
 console.log(myArr[1]);
-
-// Array method===
-
-// ===push use for add value in array====
-// ===pop use for remove last value in array====
-
 myArr.push(5);
 myArr.push(6);
 myArr.push(9);
 myArr.pop();
-
+// ===push use for add value in array====     // ===pop use for remove last value in array====
 console.log(myArr);
 console.log(myArr.indexOf(4));
 console.log(myArr.includes(4));
+
+// Array method===
 
 // slice  and splice=====
 console.log("A ", myArr);
 const myn1 = myArr.slice(1, 3);
 console.log(myn1);
 console.log("A ", myArr);
-
 console.log("B ", myArr);
 
 const myn2 = myArr.splice(1, 3);
@@ -33,12 +26,15 @@ console.log(myn2);
 console.log("C ", myArr);
 console.log("B ", myArr);
 
+const Arr2 = new Array(1, 2, 3, 4);
+console.log(Arr2);
+
 // ========concate array=======
 const marvel_Heros = ["thor", "ironman", "spiderman"];
 const dc_Heros = ["super man", "abd", "bgdj"];
 
-// marvel_Heros.push(dc_Heros)
-// console.log(marvel_Heros)
+marvel_Heros.push(dc_Heros);
+console.log(marvel_Heros);
 
 const all_Heros = marvel_Heros.concat(dc_Heros);
 console.log(all_Heros);
@@ -501,4 +497,71 @@ console.log(valueArray1.next().value);
 console.log(valueArray1.next().value);
 console.log(valueArray1.next().value);
 console.log(valueArray1.next().value);
+console.log();
 
+// filter method
+const products = [
+  { name: "laptop", price: 12000 },
+  { name: "phone", price: 8000 },
+  { name: "tablete", price: 10000 },
+  { name: "smartwatch", price: 19000 },
+];
+
+const filterProducts = products.filter((curElem) => {
+  console.log(`*`);
+  console.log(curElem.name);
+  console.log(curElem.price);
+  console.log(curElem.price <= 10000);
+
+  return curElem.price <= 10000;
+});
+
+console.log(filterProducts);
+console.log();
+
+const number = [1, 2, 3, 4, 5];
+
+const result = number.map((curElem) => curElem * curElem);
+console.log(result);
+
+// transform in capitalize
+const words = ["apple", "banana", "mango", "orange"];
+
+const capitalize1 = words.map((curElem) => {
+  return curElem.toUpperCase();
+});
+
+console.log(capitalize1);
+console.log();
+
+const number1 = [1, 2, 3, 4, 5, 6, 7, 8];
+const evenSquare = number1
+  .map((curElem) => {
+    if (curElem % 2 === 0) {
+      return curElem * curElem;
+    }
+  })
+  .filter((curElem) => curElem != undefined);
+console.log(evenSquare);
+console.log();
+
+// evenSquare second method using ternary operate
+const evenSquare1 = number1
+  .map((curNum) => (curNum % 2 === 0 ? curNum * curNum : undefined))
+  .filter((curNum) => curNum != undefined);
+
+console.log(evenSquare1);
+console.log();
+
+// add new array with "Mr" prefix
+const names = ["ram", "bharat", "laxman"];
+const prefixName = names.map((curName) => `Mr.${curName}`);
+console.log(prefixName);
+console.log();
+
+const productPrice = [100, 200, 300, 400, 500];
+
+const totalPrice = productPrice.reduce((accum, curElem) => {
+  return accum + curElem;
+}, 0);
+console.log(totalPrice);
