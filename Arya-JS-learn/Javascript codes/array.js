@@ -21,7 +21,7 @@ console.log("A ", myArr);
 console.log("B ", myArr);
 
 const myn2 = myArr.splice(1, 3);
-console.log(myn2);
+console.log("splice method " + myn2);
 
 console.log("C ", myArr);
 console.log("B ", myArr);
@@ -37,7 +37,7 @@ marvel_Heros.push(dc_Heros);
 console.log(marvel_Heros);
 
 const all_Heros = marvel_Heros.concat(dc_Heros);
-console.log(all_Heros);
+console.log("all heros :" + all_Heros);
 
 // ==mostly usable==
 const all_new_heros = [...marvel_Heros, ...dc_Heros];
@@ -62,6 +62,7 @@ while (arr < myArray.length) {
 // *********array represent by Three method********
 
 // =============array using literals===========
+console.log();
 console.log("<h3>array using literals</h3>");
 
 var employee = ["abc", "abc1", "abc2"];
@@ -120,7 +121,7 @@ console.log(" ");
 console.log(" ");
 
 console.log(" every() method");
-const arr3 = [50, 31, 55, 32];
+const arr3 = [50, 29, 55, 32];
 
 function check(value) {
   return value > 30;
@@ -171,19 +172,20 @@ console.log(result1);
 const result2 = lang.fill("next.js", 1, 2);
 console.log(result2);
 
-// ***in array i will convert value in element so use Array.form() method***
+// ***in array i will convert value in element so use Array.from() method***
 console.log("Array.from() method");
 
 const fromArray = Array.from("PATEL");
-
 console.log(fromArray);
+
 const func = function () {
   console.log(Array.from(arguments));
 };
-
 func("html", "java", "c");
+
 console.log(" ");
 console.log(" ");
+
 // ***in array i will saperate value from array so use filter() method***
 console.log("filter() method");
 const num = [11, 41, 56, 33, 90, 22, 12];
@@ -191,6 +193,7 @@ const num = [11, 41, 56, 33, 90, 22, 12];
 function check1(value) {
   return value > 30;
 }
+console.log(num.every(check1));
 
 console.log("num array after filter() : " + num.filter(check1));
 
@@ -201,7 +204,7 @@ console.log("find() method");
 const findArray = num.find((x) => x > 30);
 console.log(findArray);
 
-// ***in array i will find value from array so use find() method***
+// ***in array i will find index value from array so use findIndex() method***
 console.log("findIndex() method");
 
 const findIndexArray = num.findIndex((x) => x > 30);
@@ -215,14 +218,11 @@ const arrind = ["html", " css", "js", "bs"];
 console.log("chek element is include here : " + arrind.includes("js"));
 // ans: chek elemene is include here : true
 console.log(" ");
-console.log(" ");
 // ***in array i will find value is present or not so use includes() method***
 // console.log("includes() method");
 
 const arrindexof = ["html", "css", "js", "bs", "js"];
 // ans: chek elemene is include here : true
-
-console.log(" ");
 console.log(" ");
 
 // ***in array i will find index number so use includes() method***
@@ -233,8 +233,6 @@ console.log(
   "Index of next.js not in array element : " + arrindexof.indexOf("next.js")
 );
 // Index of next.js not in array element : -1
-console.log(" ");
-console.log(" ");
 console.log(" ");
 console.log(" ");
 
@@ -312,8 +310,7 @@ adarr.push(5);
 console.log("add 5 using push() : " + adarr);
 
 console.log(" ");
-console.log(" ");
-// ***if we enter a number in array using push() method***
+// ***if we DELET a number in array using POP() method***
 console.log("pop() method");
 
 adarr.pop();
@@ -326,6 +323,7 @@ console.log("reverse() method");
 
 adarr.reverse();
 console.log("element get in reverse direction using  reverse() : " + adarr);
+console.log(adarr);
 
 console.log(" ");
 console.log(" ");
@@ -341,6 +339,7 @@ const ope1 = redarr.reduce(function (accumulator, currentvalue) {
   return accumulator * currentvalue;
 });
 console.log("Result after reduce() : " + ope1);
+console.log(ope1);
 
 const redarr1 = [5];
 const ope2 = redarr1.reduce(function (accumulator, currentvalue) {
@@ -348,7 +347,6 @@ const ope2 = redarr1.reduce(function (accumulator, currentvalue) {
 });
 console.log("Result after reduce() : " + ope2);
 
-console.log(" ");
 console.log(" ");
 // ***if we get operation using some() method***
 console.log("some() method");
@@ -363,7 +361,6 @@ const Resultsome = somearr.some(test);
 console.log("Dose Array somearr has any value > 50 ? : " + Resultsome);
 
 console.log(" ");
-console.log(" ");
 // ***if we get operation using every() method***
 console.log("every() method");
 
@@ -377,7 +374,6 @@ const Resultevery = everyarr.every(test);
 console.log("Dose Array everyarr has any value > 50 ? : " + Resultevery);
 
 console.log(" ");
-console.log(" ");
 // ***if we get operation using sift() method***
 console.log("sift() method");
 
@@ -385,6 +381,7 @@ console.log(
   "Removing the very first elememt of Array everyarr : " + everyarr.shift()
 );
 console.log(everyarr.shift());
+console.log(everyarr);
 
 console.log(" ");
 console.log(" ");
@@ -456,6 +453,7 @@ const splarr1 = [
 ];
 console.log(splarr1);
 const splicearray1 = splarr1.splice(2, 2, "wednesday");
+console.log(splicearray1);
 console.log("splice array for remove and add : " + splarr1);
 console.log(splarr1);
 
@@ -565,3 +563,33 @@ const totalPrice = productPrice.reduce((accum, curElem) => {
   return accum + curElem;
 }, 0);
 console.log(totalPrice);
+
+// pangramChecker program
+const pangramChecker = (str) => {
+  let inputArr = str.toLowerCase().split();
+  console.log(inputArr);
+};
+console.log(pangramChecker("The quick brown fox jumps ove the lazy dog"));
+
+// second method
+const pangramChecker1 = (str) => {
+  let inputArr1 = str.toLowerCase().split("");
+  console.log(inputArr1);
+
+  const values5 = inputArr1.filter(
+    (curElem) =>
+      curElem.charCodeAt() >= "a".charCodeAt() &&
+      curElem.charCodeAt() <= "z.".charCodeAt()
+  );
+
+  console.log(values5);
+
+  console.log(new Set(values5));
+  return [...new Set(values5)]; // ... three dot is a spred operator
+  console.log();
+
+  // return new Set(values5);
+  return [...new Set(values5)].length === 26; // ... three dot is a spred operator// ... three dot is a spred operator
+};
+
+console.log(pangramChecker1("The quick brown fox jumps ove the lazy dog"));

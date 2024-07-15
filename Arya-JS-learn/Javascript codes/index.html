@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>Js parctice code</h1>
+    <p>Dom Tree structure</p>
+
+    <script>
+        let parent = document
+        console.log(parent)
+
+        let bodyElement=document.body
+
+        let bodyChild = bodyElement.childNodes;
+        console.log(bodyChild)
+        let bodyChild1 = bodyElement.children;
+        console.log(bodyChild1)
+    </script> -->
+
+    <!-- <h1 id="heading">Dom Api</h1>
+    <ul class="lists">
+        <li>1 node</li>
+        <li>2 node</li>
+        <li>3 node</li>
+        <li>4 node</li>
+        <li style="display: none;">5 node</li>
+    </ul>
+
+    <script>
+        let findElementById = document.getElementById("heading")
+        console.log(findElementById)
+        console.log(findElementById.innerHTML)
+
+        let findElementByClassName = document.getElementsByClassName("lists")
+        console.log(...findElementByClassName)
+
+        for(let elem of findElementByClassName){
+            console.log(elem.innerHTML)
+            console.log(elem.innerText)
+        }
+
+        let findElementByTagName = document.getElementsByTagName("li")
+        console.log(...findElementByTagName)
+
+        for(let elem of findElementByTagName){
+            console.log(elem)
+            // console.log(elem.innerHTML)
+            // console.log(elem.innerText)
+        }
+
+        const findElementByQuerySelector = document.querySelector("#heading")
+        console.log((findElementByQuerySelector.innerText = "Aryas Parctice code"))
+    </script> -->
+
+
+    <div>
+        <h1>Simple DOM Todo App</h1>
+        <input type="text" id="inputField" />
+        <button class="todoListsElem btn">Click me</button>
+    </div>
+
+    <script>
+        let inputElem = document.getElementById("inputField")
+        console.log(inputElem)
+
+        let clickBtn = document.querySelector(".btn")
+        console.log(clickBtn)
+
+        clickBtn.addEventListener( "click", ()  )
+    </script> 
+</body>
+</html>

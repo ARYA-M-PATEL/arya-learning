@@ -51,3 +51,10 @@ console.log("reaplce one word to other word : " + str4.replace("HTML", "CSS"));
 
 console.log("reaplce all word to other word : " + str4.replace(/HTML/g, "CSS"));
 // note:::: g for global
+
+// *********** STRING BY THAPA TECHNICAL ***************
+
+let text = "hello javascript, welcome to best javascript series";
+// let index = text.indexOf("javascript");
+let index = text.lastIndexOf("javascript");
+console.log(index);

@@ -216,3 +216,66 @@ console.log(months);
 const indexToDelete = months.indexOf("june");
 months.splice(indexToDelete, 1);
 console.log(months);
+console.log();
+
+let Trim = "   Hello World   ";
+let Trim111 = Trim.trim(Trim);
+console.log(Trim111);
+console.log();
+
+// 1. Print A to z alphabet
+
+console.log("A".charCodeAt());
+console.log("Z".charCodeAt());
+console.log();
+console.log("a".charCodeAt());
+console.log("z".charCodeAt());
+  console.log(String.fromCharCode("z"));
+
+console.log();
+
+// print a to z alphabet in small
+for (let char = 97; char <= 122; char++) {
+  console.log(String.fromCharCode(char));
+}
+for (let char = 97; char <= 122; char++) {
+  console.log(char);
+}
+console.log();
+
+// 2. Write a function to check if all vowels are present or not in string
+
+const presentVowelsOpNot = (str) => {
+  const vowels = "aeiou";
+
+  for (let char of vowels) {
+    // console.log(vowels);
+    // console.log(str.includes(char));
+
+    if (!str.includes(char)) {
+      return false;
+    }
+  }
+  return true;
+};
+
+console.log(presentVowelsOpNot("my name is arya patel"));
+
+// 3. write a function to count  number of vowels in string ?
+
+const countVowels = (str) => {
+  const vowels = "aeiou";
+
+  let count = 0;
+  for (let char of str) {
+    console.log(char);
+    // console.log();
+
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
+  return count;
+};
+
+console.log(countVowels("Hello world"));
