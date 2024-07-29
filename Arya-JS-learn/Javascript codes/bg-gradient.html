@@ -5,6 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .copyCode {
+            padding: 10px;
+            border: 2px solid wheat;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,12 +26,6 @@
             <h2>Copy your code here</h2>
             <div class="copyCode">
                 background-image: leaniar-gradient(to right, rgb(92, 145, 229), rgb(152,63,198))
-
-                <!-- <a href="tel:+12356982">call
-                    number
-                </a> -->
-                <a href="mailto:aya@123gmail.com">email
-                </a>
             </div>
         </div>
     </section>
@@ -28,20 +33,49 @@
     <script>
         let btn1 = document.getElementById("myButton1")
         let btn2 = document.getElementById("myButton2")
+        let copyDiv = document.querySelector(".copyCode")
+        let rgb1 = "#000"
+        let rgb2 = "#fff"
 
-        const handleButton1 = () => {
+        const hexValues = () => {
             let myHexValues = "0123456789abcdef"
             let colors = "#"
 
             for (let i = 0; i < 6; i++) {
                 colors = colors + myHexValues[Math.floor(Math.random() * 16)]
             }
-            console.log(color)
+            return colors
+        }
+
+        const handleButton1 = () => {
+            rgb1 = hexValues()
+            console.log(rgb1)
+            btn1.innerText = rgb1
+            document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1},${rgb2})`
+
+            copyDiv.innerHTML = `background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`
+
+            btn1.addEventListener("click", () => {
+                document.body.style.backgroundColor = `${rgb1}`
+            })
+        }
+        const handleButton2 = () => {
+            rgb2 = hexValues()
+            console.log(rgb2)
+            btn2.innerText = rgb2
+            document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1}, ${rgb2})`
+
+            copyDiv.innerHTML = `background-image: leaniar-gradient(to right, ${rgb1}, ${rgb2})`
         }
 
         btn1.addEventListener("click", handleButton1)
         btn2.addEventListener("click", handleButton2)
+
+        copyDiv.addEventListener("click", () => {
+            navigator.clipboard.writeText(copyDiv.innerText)
+            alert("text copied")
+        })
+
+
     </script>
 </body>
-
-</html>
