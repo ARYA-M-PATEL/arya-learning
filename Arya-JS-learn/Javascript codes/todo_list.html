@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To Do Lists</title>
     <style>
         body {
             background-color: #000;
@@ -92,23 +92,80 @@
             const mainTodoElem = document.querySelector(".todo-lists-elem")
             const inputValue = document.getElementById("inputvalue")
 
-            let localTodoLists = []
+
+
+            // addingaddto list todynamic 
+            const addTodoDynamicElemment = (curElem) => {
+                const divElement = document.createElement("div")
+                divElement.classList.add("main_todo_div")
+                divElement.innerHTML = `<li>${curElem}</li> <button class="deleteBtn">Delete</button>`
+                mainTodoElem.append(divElement)
+            }
+
+            const getTodoListsFromLocal = () => {
+                return JSON.parse(localStorage.getItem("TodoList Item"))
+            }
+
+            const addTodoListLocalStorage = (localTodoLists) => {
+                return localTodoLists.setItem("TodoList Item", JSON.stringify(localTodoLists))
+            }
+
+            let localTodoLists = getTodoListsFromLocal() || []
+
+
             const addTodoLists = (e) => {
                 e.preventDefault()
 
                 const todoListValue = inputValue.value.trim()
+                inputValue.value = ""
 
-                localTodoLists.push(todoListValue)
-                localTodoLists = [...new Set(localTodoLists)]
+                if (todoListValue != "" && !localTodoLists.includes(todoListValue)) {
+                    localTodoLists.push(todoListValue)
+                    localTodoLists = [...new Set(localTodoLists)]
+                    console.log(localTodoLists)
+
+                    localStorage.setItem("TodoList Item", JSON.stringify(localTodoLists))
+
+                    // const divElement = document.createElement("div")
+                    // divElement.classList.add("main_todo_div")
+                    // divElement.innerHTML = `<li>${inputValue.value}</li> <button class="deleteBtn">Delete</button>`
+                    // mainTodoElem.append(divElement)
+
+                    addTodoDynamicElemment(todoListValue)
+                }
+            }
+
+
+            const showTodoList = () => {
                 console.log(localTodoLists)
 
-                localStorage.setItem("TodoList Item", JSON.stringify(localTodoLists))
-
-                const divElement = document.createElement("div")
-                divElement.classList.add("main_todo_div")
-                divElement.innerHTML = `<li>${inputValue.value}</li> <button class="deleteBtn">Delete</button>`
-                mainTodoElem.append(divElement)
+                localTodoLists.forEach((curElem) => {
+                    addTodoDynamicElemment(curElem)
+                })
             }
+            showTodoList()
+
+            // remove the data 
+
+            const removeTodoElem = (e) => {
+                const todoRemove = e.target
+                let todoListContent = todoRemove.previousElementSibling.innerText
+                console.log(todoListContent)
+
+                localTodoLists = localTodoLists.filter((curTodo) => {
+                    // console.log(curTodo)
+                    return curTodo != todoListContent
+                })
+                console.log(localTodoLists)
+
+                addTodoListLocalStorage(localTodoLists)
+
+            }
+
+            mainTodoElem.addEventListener("click", (e) => {
+                e.preventDefault()
+                removeTodoElem(e)
+            })
 
             document.querySelector(".btn").addEventListener("click", (e) => {
                 addTodoLists(e)
