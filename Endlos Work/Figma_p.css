@@ -1,0 +1,162 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Kanit', sans-serif;
+    background-color: white;
+}
+.general_maintenance_portion{
+    /* max-width: 1853px; */
+    /* width: 100%; */
+}
+.top_bar{
+    display: flex;
+    width: 100%;
+    /*  */
+}
+.title{
+    background-color: grey;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+}
+.top_bar .title_part{
+    margin: auto;
+    height: 100%;
+    text-align: center;
+}
+.title .heading{
+    font-size: 30px;
+    padding: 0px 60px;
+}
+.line_part{
+    height: 5px;
+    width: 500px;
+    margin-top: 5px;
+    background-color: black;
+}
+.access_btn_portion{
+    display: flex;
+    height: 100px;
+    max-width: 1400PX;
+    /*  */
+    margin: auto;
+}
+.access_btn{
+    margin: auto;
+    width: 25%;
+    /*  */
+    display: flex;
+    position: relative;
+    /* align-items: center; */
+
+}
+.access_btn img{
+    height:50px;
+    position: absolute;
+    left:50px;
+    bottom: -10px;
+    /*  */
+    border-radius: 50%;
+    z-index: 1;
+    background-color: aqua;
+    
+}
+.access_btn .btn{
+    margin: auto;
+    
+}
+.access_btn .btn button{
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 15px;
+    
+}
+.access_btn .btn1{
+    padding: 5px 80px;
+    margin: auto;
+}
+.common{
+    margin-top: 20px;
+}
+
+.machine_division{
+    max-width: 1400px;
+    border-radius: 17px;
+    margin: auto;
+
+    border: 3px solid #A8BF3D;
+}
+.machine_parts{
+    max-width: 1400px;
+    border-radius: 17px;
+    padding-bottom: 80px;
+    display: flex;
+
+}
+.m_1_2{
+    
+    width: 50%;
+    /* display: flex; */
+    /*  */
+}
+.m_1_2 .heading{
+    font-size: 30px;
+    text-align: center;
+    /*  */
+}
+.heading_1{
+    
+}
+.m_img{
+    margin-top: 20px;
+}
+.m1_part_1{
+    padding: 30px 40px 20px 0px;
+    display: flex;
+    position: relative;
+    border-right: 3px solid #A8BF3D;
+    
+}
+.m_btn{
+    border: 3px solid rgb(50, 24, 152);
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    width: 90%;
+    text-align: end;
+    border-radius: 20px;
+}
+.main_img{
+    width: 10%;
+}
+.main_img img{
+    height: 100px;
+    position: absolute;
+    left: 20px;
+    top: 35px;
+    z-index: 1;
+    border-radius: 50%;
+    background-color: aqua;
+}
+.m_btn_1{
+    width: 30.33%;
+}
+.m_btn_1 img{
+    color: white;
+    height: 50px;
+
+}
+
+.machine_btn{
+    color: aliceblue;
+    background-color: #0c5800;
+    border-radius: 50%;
+    border: none;
+
+}
