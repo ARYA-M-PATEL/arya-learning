@@ -86,3 +86,14 @@ currentTime();
 setInterval(() => {
   currentTime();
 }, 1000);
+
+const currentDate = () => {
+  let curDate = new Date();
+  document.getElementById("date").innerText = curDate;
+};
+
+currentDate();
+
+setInterval(() => {
+  currentDate();
+}, 1000);

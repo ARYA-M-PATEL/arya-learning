@@ -3,9 +3,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 700px;
+  height: 100%;
   width: 100%;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 .main {
@@ -91,10 +92,9 @@ li {
 
 /* for clock */
 .clockHolder {
-  /* border: 2px solid red; */
-  /* color: red; */
   display: flex;
   justify-content: center;
+  position: relative;
   align-items: center;
 }
 
@@ -104,18 +104,14 @@ li {
   color: rgb(237, 124, 18);
   padding: 20px;
   margin: 0;
-}
-
-.clockHolder {
   display: flex;
-  position: relative;
-  margin-top: 150px;
+  justify-content: center;
 }
 
 .maindiv {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 10px;
 }
 .clock-h1 {
   display: flex;
