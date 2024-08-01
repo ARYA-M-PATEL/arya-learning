@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        body {
+            background-color: #000;
+        }
+
+        .clockHolder {
+            /* border: 2px solid red; */
+            /* color: red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #clock {
+            font-size: 50px;
+            border: 2px solid rgb(14, 227, 36);
+            color: rgb(14, 227, 36);
+            padding: 20px;
+            margin: 0;
+        }
+
+        .clockHolder {
+            display: flex;
+            position: relative;
+            margin: 0;
+        }
+
+        .maindiv {
+            display: flex;
+            margin: 0;
+        }
+
+        .maindiv ::after {
+            content: '';
+            /* display: inline-block; */
+            position: absolute;
+            width: 200px;
+            height: 10px;
+            background-color: rgb(14, 227, 36);
+            border-radius: 20px;
+            margin-right: -100%;
+            border-bottom: 1px solid #000;
+            z-index: 88;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="comtainer">
+        <div class="clockHolder">
+            <div class="timeOption"></div>
+            <div class="maindiv">
+                <p id="clock"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const currentTime = () => {
+            let curTime = new Date().toLocaleTimeString()
+            document.getElementById("clock").innerText = curTime
+        }
+
+        currentTime()
+
+        setInterval(() => {
+            currentTime()
+        }, 1000)
+    </script>
+</body>
+
+</html>

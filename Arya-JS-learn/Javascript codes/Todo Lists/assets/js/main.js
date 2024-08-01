@@ -74,3 +74,15 @@ mainTodoElem.addEventListener("click", (e) => {
 document.querySelector(".btn").addEventListener("click", (e) => {
   addTodoLists(e);
 });
+
+// ***** For Clock *****
+const currentTime = () => {
+  let curTime = new Date().toLocaleTimeString();
+  document.getElementById("clock").innerText = curTime;
+};
+
+currentTime();
+
+setInterval(() => {
+  currentTime();
+}, 1000);
