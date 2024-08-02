@@ -1,3 +1,28 @@
+// ***** For Date *****
+const currentDate = () => {
+  let curDate = new Date().toLocaleDateString();
+  document.getElementById("date").innerText = curDate + " -( M/D/Y ) ";
+};
+
+currentDate();
+
+setInterval(() => {
+  currentDate();
+}, 1000);
+
+// ***** For Clock *****
+const currentTime = () => {
+  let curTime = new Date().toLocaleTimeString();
+  document.getElementById("clock").innerText = curTime;
+};
+
+currentTime();
+
+setInterval(() => {
+  currentTime();
+}, 1000);
+
+// ***** for Todo Lista *****
 const mainTodoElem = document.querySelector(".todo-lists-elem");
 const inputValue = document.getElementById("inputvalue");
 
@@ -74,26 +99,3 @@ mainTodoElem.addEventListener("click", (e) => {
 document.querySelector(".btn").addEventListener("click", (e) => {
   addTodoLists(e);
 });
-
-// ***** For Clock *****
-const currentTime = () => {
-  let curTime = new Date().toLocaleTimeString();
-  document.getElementById("clock").innerText = curTime;
-};
-
-currentTime();
-
-setInterval(() => {
-  currentTime();
-}, 1000);
-
-const currentDate = () => {
-  let curDate = new Date();
-  document.getElementById("date").innerText = curDate;
-};
-
-currentDate();
-
-setInterval(() => {
-  currentDate();
-}, 1000);
