@@ -1,7 +1,12 @@
 // ***** For Date *****
 const currentDate = () => {
-  let curDate = new Date().toLocaleDateString();
-  document.getElementById("date").innerText = curDate + " -( M/D/Y ) ";
+  let curDate = new Date().toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
+
+  document.getElementById("date").innerText = curDate;
 };
 
 currentDate();
@@ -12,15 +17,26 @@ setInterval(() => {
 
 // ***** For Clock *****
 const currentTime = () => {
-  let curTime = new Date().toLocaleTimeString();
+  let curTime = new Date().toLocaleTimeString("en-US", {
+    timeZone: "Asia/Kolkata",
+  });
   document.getElementById("clock").innerText = curTime;
 };
-
 currentTime();
 
 setInterval(() => {
   currentTime();
 }, 1000);
+
+// *** Second Method ***
+// function cutcut() {
+//   let curTime = new Date().toLocaleTimeString();
+//   document.getElementById("clock").innerText = curTime;
+// }
+// cutcut();
+// setInterval(() => {
+//   cutcut();
+// });
 
 // ***** for Todo Lista *****
 const mainTodoElem = document.querySelector(".todo-lists-elem");
