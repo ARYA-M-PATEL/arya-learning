@@ -59,11 +59,12 @@ const addTodoListLocalStorage = (localTodoLists) => {
 };
 
 let localTodoLists = getTodoListsFromLocal() || [];
+
 const addTodoLists = (e) => {
   e.preventDefault();
   const todoListValue = inputValue.value.trim();
   inputValue.value = "";
-  if (todoListValue != "" && !localTodoLists.includes(todoListValue)) {
+  if (todoListValue != "" && ! localTodoLists.includes(todoListValue)) {
     localTodoLists.push(todoListValue);
     localTodoLists = [...new Set(localTodoLists)];
     console.log(localTodoLists);
