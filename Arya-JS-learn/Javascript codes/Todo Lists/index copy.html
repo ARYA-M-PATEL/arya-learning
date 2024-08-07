@@ -61,25 +61,41 @@
         const addTodoList = (e) => {
             e.preventDefault()
 
-            const divElement = document.createElement("div")
-            divElement.classList.add("main_todo_div")
-            divElement.innerHTML = `<li>${inputValue.value}</li> <button class="deleteBtn">Delete</button>`
-            mainTodoElem.append(divElement)
+            // const divElement = document.createElement("div")
+            // divElement.classList.add("main_todo_div")
+            // divElement.innerHTML = `<li>${inputValue.value}</li> <button class="deleteBtn">Delete</button>`
+            // mainTodoElem.append(divElement)
 
             const todoListValue = inputValue.value.trim()
-            loacalTodoList.push(todoListValue)
-            loacalTodoList = [...new Set(loacalTodoList)]
-            console.log(loacalTodoList)
+            inputValue.value = ""
 
-            localStorage.setItem("todo_list", JSON.stringify(loacalTodoList))
+            if (todoListValue != "" && !loacalTodoList.includes(todoListValue)) {
+                loacalTodoList.push(todoListValue)
+                loacalTodoList = [...new Set(loacalTodoList)]
+                console.log(loacalTodoList)
 
+                localStorage.setItem("todo_list", JSON.stringify(loacalTodoList))
+
+                addTodoDynamicElement(todoListValue)
+            }
         }
 
         const getTodoListFromLocal = () => {
             return JSON.parse(localStorage.getItem("todo_list"))
         }
 
+        const addTodoListLocalStorage = (localTodoLists) => {
+            return localStorage.setItem("todo_list", JSON.stringify(localTodoLists))
+        }
+
         loacalTodoList = getTodoListFromLocal() || []
+
+        const addTodoDynamicElement = (curElem) => {
+            const divElement = document.createElement("div")
+            divElement.classList.add("main_todo_div")
+            divElement.innerHTML = `<li>${curElem}</li> <button class="deleteBtn">Delete</button>`
+            mainTodoElem.append(divElement)
+        }
 
         const showTodoList = () => {
             console.log(loacalTodoList)
@@ -90,12 +106,31 @@
         }
         showTodoList()
 
-        const addTodoDynamicElement = (curElem) => {
-            const divElement = document.createElement("div")
-            divElement.classList.add("main_todo_div")
-            divElement.innerHTML = `<li>${curElem}</li> <button class="deleteBtn">Delete</button>`
-            mainTodoElem.append(divElement)
+        const removeTodoElem = (e) => {
+            const todoRemove = e.target
+            let todoListContent = todoRemove.previousElementSibling.innerText
+            let parentElem = todoRemove.parentElement
+            console.log(todoListContent)
+
+            loacalTodoList = loacalTodoList.filter((curTodo) => {
+                // console.log(curTodo)
+                return curTodo != todoListContent
+            })
+
+            addTodoListLocalStorage(loacalTodoList)
+            parentElem.remove()
+
+            console.log(loacalTodoList)
         }
+
+        mainTodoElem.addEventListener("click", (e) => {
+            e.preventDefault()
+
+            console.log(e.target)
+            if (e.target.classList.contains("deleteBtn")) {
+                removeTodoElem(e)
+            }
+        });
 
     </script>
 </body>
