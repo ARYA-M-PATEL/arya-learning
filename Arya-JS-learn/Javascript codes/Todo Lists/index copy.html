@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do Lists</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- *****For Date ***** -->
+        <div class="datetime">
+            <div class="DateHolder">
+                <!-- <div class="dateOption"></div> -->
+                <div class="maindiv">
+                    <h1 class="clock-h1">Date</h1>
+                    <p id="date"></p>
+                </div>
+            </div>
+
+            <div class="clockHolder">
+                <!-- <div class="timeOption"></div> -->
+                <div class="maindiv">
+                    <h1 class="clock-h1">Clock</h1>
+                    <p id="clock"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ***** For Clock ***** -->
+
+        <div class="listHolder">
+            <h1>ToDo Lists</h1>
+            <form>
+                <div class="main">
+                    <input type="text" id="inputvalue" placeholder="Add Your Tasks Here ...">
+                    <button class="btn flex-nowrap">Add Task</button>
+                </div>
+                <section class="todo-lists-elem">
+                    <h3 class="tasks"><u>Tasks</u></h3>
+                </section>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const mainTodoElem = document.querySelector(".todo-lists-elem")
+        const inputValue = document.getElementById("inputvalue")
+
+        document.querySelector(".btn").addEventListener("click", (e) => {
+            addTodoList(e)
+        })
+        // document.querySelector(".btn").addEventListener("click", function (e) {
+        //     addTodoList(e)
+        // })
+
+        let loacalTodoList = []
+
+        const addTodoList = (e) => {
+            e.preventDefault()
+
+            const divElement = document.createElement("div")
+            divElement.classList.add("main_todo_div")
+            divElement.innerHTML = `<li>${inputValue.value}</li> <button class="deleteBtn">Delete</button>`
+            mainTodoElem.append(divElement)
+
+            const todoListValue = inputValue.value.trim()
+            loacalTodoList.push(todoListValue)
+            loacalTodoList = [...new Set(loacalTodoList)]
+            console.log(loacalTodoList)
+
+            localStorage.setItem("todo_list", JSON.stringify(loacalTodoList))
+
+        }
+
+        const getTodoListFromLocal = () => {
+            return JSON.parse(localStorage.getItem("todo_list"))
+        }
+
+        loacalTodoList = getTodoListFromLocal() || []
+
+        const showTodoList = () => {
+            console.log(loacalTodoList)
+
+            loacalTodoList.forEach((curElem) => {
+                addTodoDynamicElement(curElem)
+            })
+        }
+        showTodoList()
+
+        const addTodoDynamicElement = (curElem) => {
+            const divElement = document.createElement("div")
+            divElement.classList.add("main_todo_div")
+            divElement.innerHTML = `<li>${curElem}</li> <button class="deleteBtn">Delete</button>`
+            mainTodoElem.append(divElement)
+        }
+
+    </script>
+</body>
+
+</html>
